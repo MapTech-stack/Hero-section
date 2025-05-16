@@ -1,0 +1,491 @@
+/*
+    Global font 
+*/
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+
+/*
+    Global variable
+    
+- Almost White: hsl(0, 0%, 98%)
+- Medium Gray: hsl(0, 0%, 41%)
+- Almost Black: hsl(0, 0%, 8%)
+*/
+:root {
+  /* colors  */
+  --primary-color: hsl(0, 0%, 98%);
+  --secondary-text-color: hsl(0, 0%, 41%);
+  --main-text-color: hsl(0, 0%, 8%);
+  --btn-border-color: hsl(0, 0%, 8%);
+  --btn-bg-color: hsl(0, 0%, 8%);
+  --btn-hover-bg-color: transparent;
+  --btn-text-color: hsl(0, 0%, 98%);
+  --btn-hover-text-color: hsl(0, 0%, 8%);
+  --sub-menu-shadow: 0px 0px 40px 7px rgba(0, 0, 0, 0.2);
+
+  /* fonts  */
+  --main-font-family: "Epilogue", sans-serif;
+  --fs-header: 14px;
+  --fs-hero-header: 2.5rem;
+  --fs-hero-body: 1.125rem;
+  --fs-hero-btn: 14px;
+  --fw-header: 500;
+  --fw-hero-header: 700;
+  --fw-hero-body: 500;
+  --fw-hero-btn: 500;
+  --border: 2px solid red;
+}
+
+/* ========Resets===============  */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"],
+li,
+ul {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  overflow-x: hidden;
+  background: var(--primary-color);
+  color: var(--secondary-text-color);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-size: var(--fs-hero-body);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ================ Utility classes */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.btn {
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--secondary-text-color);
+  background-color: var(--btn-bg-color);
+  transition: all 1s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--btn-hover-text-color);
+}
+.hidden {
+  display: none;
+}
+
+.show {
+  display: inherit;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* ========Primary nav========= */
+
+.navbar-logo {
+  margin: 1.5rem;
+}
+
+.primary-header {
+  /* border: 2px solid red; */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar {
+  width: 80%;
+}
+
+.primary-navigation {
+  /* border: 5px solid green; */
+  align-items: center;
+  justify-content: space-between;
+  margin-inline-end: 2rem;
+}
+
+.nav-list {
+  --gap: 3rem;
+  display: flex;
+}
+
+.login-btn {
+  background: transparent;
+  border: none;
+}
+
+.register-btn {
+  background: transparent;
+  border: 1px solid var(--main-text-color);
+}
+
+/* drop down sub-Nav */
+
+.nav-list {
+  position: relative;
+}
+.nav-list li {
+  position: relative;
+}
+
+.sub-menu-icon {
+  display: inline-block;
+  margin-inline-start: 0.4rem;
+}
+
+.sub-menu {
+  position: absolute;
+  left: -20px;
+  top: 40px;
+  flex-direction: column;
+  padding: 15px;
+  color: black;
+  background: #fff;
+  box-shadow: var(--sub-menu-shadow);
+
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  min-width: 10rem;
+  z-index: 50;
+}
+
+.sub-menu li span {
+  display: inline-block;
+  margin-inline-start: 1rem;
+}
+
+.sub-menu li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-block: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 35em) {
+  .primary-navigation {
+    align-items: start;
+    justify-content: start;
+    --gap: 2rem;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 0 0 40%;
+    background: hsl(0 0% 100% / 1);
+    padding: min(20vh, 8rem) 1rem;
+    transform: translateX(120%);
+    transition: transform 0.9s ease-in-out;
+  }
+  .nav-list {
+    flex-direction: column;
+
+    --gap: 1rem;
+  }
+
+  .navbar-btn {
+    --gap: 1rem;
+    width: 100%;
+    margin-inline-end: 2rem;
+
+    flex-direction: column;
+  }
+
+  .register-btn {
+    color: var(--secondary-text-color);
+  }
+
+  .mobile-toggle {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    width: 2rem;
+    aspect-ratio: 1;
+    border: none;
+    background-color: transparent;
+    background-image: url(images/icon-menu.svg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(20%);
+  }
+
+  .mobile-toggle[aria-expanded="true"] {
+    background-image: url(images/icon-close-menu.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .sub-menu {
+    /* position: absolute; */
+    position: static;
+    /* position: fixed; */
+    height: auto;
+    width: 80%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+/* section{
+    margin-block-start: 2rem;
+} */
+/* Hero section */
+
+/* hero mobile */
+
+.hero-section {
+  /* height: calc(100vh - 10px); */
+  height: 100%;
+  width: 100%;
+  /* padding: 0 130px 100px; */
+  overflow: hidden;
+  /* padding-bottom: 3rem; */
+}
+.hero {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.hero-img {
+  grid-column: 1 / 4;
+  order: -1;
+}
+
+.hero-content {
+  grid-column: 1 / 4;
+  text-align: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-weight: 700;
+  font-size: var(--fs-hero-header);
+  color: var(--main-text-color);
+  margin-block-end: 0.5rem;
+}
+
+.hero-content p {
+  width: 90%;
+  /* max-width: 35ch; */
+  text-align: center;
+  place-self: center;
+  margin-block-end: 0.6rem;
+}
+
+.hero-btn {
+  place-self: center;
+  margin-block-end: 1.5rem;
+}
+
+.hero-adds {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 1.3rem;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 30px;
+}
+
+.hero-adds img {
+  width: 70px;
+}
+
+@media (min-width: 43.75em) {
+  .hero-section {
+    margin-block-start: 3rem;
+  }
+  .hero {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+
+  .hero-img {
+    grid-column: 7 / 12;
+
+    /* display: none; */
+    order: 1;
+  }
+  .hero-content {
+    grid-column: 2 / 6;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-block-start: 2rem;
+    width: 90%;
+    line-height: 1;
+    text-align: left;
+  }
+  .hero-content p {
+    text-align: left;
+    place-self: start;
+    width: 100%;
+  }
+
+  .hero-btn {
+    display: grid;
+    place-self: start;
+    margin-block: 2rem;
+    /* margin-left: -300px; */
+  }
+
+  .hero-adds {
+    justify-content: start;
+  }
+}
+
+@media (width >= 75em) {
+  .hero-section {
+    margin-block-start: 3rem;
+  }
+
+  .hero {
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 2rem;
+  }
+
+  .hero-img {
+    grid-column: 8 / 11;
+    order: 1;
+    place-self: center;
+  }
+
+  .hero-content {
+    grid-column: 3 / 7;
+    text-align: left;
+    justify-content: left;
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+    margin-block-start: 2rem;
+    width: 90%;
+    line-height: 1;
+  }
+
+  .hero-content h1 span {
+    display: block;
+  }
+
+  .hero-content p {
+    text-align: left;
+    place-self: start;
+    width: 100%;
+  }
+
+  .hero-btn {
+    place-self: start;
+    background-color: var(--primary-color);
+    color: var(--main-text-color);
+
+    margin-bottom: 2rem;
+  }
+
+  .hero-adds {
+    gap: 2rem;
+    justify-content: start;
+    align-items: center;
+  }
+}

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="primary-header flex">
+      <!-- Logo Section -->
+      <div class="navbar-logo">
+        <img src="images/logo.svg" alt="Navigation logo" />
+      </div>
+
+      <!-- mobile Toggle -->
+
+      <button
+        class="mobile-toggle"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <span class="sr-only">muenu</span>
+      </button>
+
+      <!-- Navigation Section -->
+      <nav class="navbar">
+        <div
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation flex"
+        >
+          <!-- Navigation Links -->
+          <ul class="nav-list flex">
+            <li>
+              <a href="#">Features </a>
+              <img
+                src="images/icon-arrow-down.svg"
+                class="sub-menu-icon"
+                alt=""
+              />
+
+              <!-- Sub Menu -->
+              <ul class="sub-menu flex hidden">
+                <li>
+                  <img src="images/icon-todo.svg" alt="" />
+                  <span>Todo List</span>
+                </li>
+                <li>
+                  <img src="images/icon-calendar.svg" alt="" />
+                  <span>Calender</span>
+                </li>
+                <li>
+                  <img src="images/icon-reminders.svg" alt="" />
+                  <span>Reminder</span>
+                </li>
+
+                <li>
+                  <img src="images/icon-planning.svg" alt="" />
+                  <span>Planning</span>
+                </li>
+              </ul>
+            </li>
+
+            <!-- TWO -->
+
+            <li>
+              <a href="#"> Company </a>
+
+              <img
+                src="images/icon-arrow-down.svg"
+                class="sub-menu-icon"
+                alt=""
+              />
+
+              <!-- sub menu -->
+              <ul class="sub-menu flex hidden">
+                <li>History</li>
+                <li>Our Team</li>
+                <li>Blog</li>
+              </ul>
+            </li>
+
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+
+          <!-- Action Buttons -->
+          <div class="navbar-btn flex">
+            <button class="btn login-btn">Login</button>
+            <button class="btn register-btn">Register</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main>
+      <section class="hero-section">
+        <div class="hero">
+          <!-- hero-content -->
+          <div class="hero-content">
+            <h1>Make <span>remote work</span></h1>
+            <p>
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <button class="btn hero-btn">Learn more</button>
+            <div class="hero-adds">
+              <img src="images/client-databiz.svg" alt="" />
+              <img src="images/client-audiophile.svg" alt="" />
+              <img src="images/client-meet.svg" alt="" />
+              <img src="images/client-meet.svg" alt="" />
+            </div>
+          </div>
+          <!-- END OF hero-content -->
+          <!-- Hero image side-->
+          <picture class="hero-img">
+            <source
+              media="(width > 35em)"
+              srcset="/images/image-hero-desktop.png"
+            />
+            <source
+              media="(width >= 43.75em)"
+              srcset="/images/image-hero-desktop"
+            />
+            <img
+              src="images/image-hero-mobile.png"
+              alt="mechanical keyboard"
+              width="440"
+              height="386"
+            />
+          </picture>
+          <!-- 
+          <div class="hero-img">
+            <img src="images/image-hero-mobile.png" alt="" />
+          </div> -->
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!--   
+  Features
+  Company
+  Careers
+  About
+
+  Login
+  Register
+
+  Make remote work
+
+  Get your team in sync, no matter your location. Streamline processes, 
+  create team rituals, and watch productivity soar.
+
+  Learn more
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
